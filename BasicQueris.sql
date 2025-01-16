@@ -2,17 +2,22 @@
 ---select *---
 select * from dbo.ProductDetails;
 ---select list---
-select ProductName, Release_date from dbo.ProductDetails;
+select ProductName, Release_date
+from dbo.ProductDetails;
 
 -----section 2 - sorting data
 ---ASC---
-select ProductName, Release_date from dbo.ProductDetails order by ProductName, Release_date;
+select ProductName, Release_date 
+from dbo.ProductDetails 
+order by ProductName, Release_date;
 
 ---DESC---
-select ProductName, Brand from dbo.ProductDetails order by Brand DESC;
+select ProductName, Brand 
+from dbo.ProductDetails order by Brand DESC;
 
 ---LEN---
-select Brand from dbo.ProductDetails order by LEN(Brand) ASC;
+select Brand from dbo.ProductDetails 
+order by LEN(Brand) ASC;
 
 -----section 3 -limiting rows
 
@@ -51,7 +56,9 @@ select distinct Brand, Price, Release_date
 from dbo.ProductDetails;
 
 ---Where---
-select Ship_date, ProductName from dbo.ProductDetails where Ship_date > '2020-02-21';
+select Ship_date, ProductName
+from dbo.ProductDetails 
+where Ship_date > '2020-02-21';
 
 ---AND---
 select ProductName, Release_date, Brand 
@@ -59,19 +66,23 @@ from dbo.ProductDetails
 where ProductId >400 and Brand = 'Google';
 
 ---OR---
-select ProductName from dbo.ProductDetails
+select ProductName 
+from dbo.ProductDetails
 where Release_date > '2023-01-08'  OR Ship_date > '2024-08-05';
 
 ---IN---
-select ProductName, price from dbo.ProductDetails
+select ProductName, price 
+from dbo.ProductDetails
 where Price in(22.7, 27.75, 6.90);
 
 ---NOT IN---
-select ProductName, price from dbo.ProductDetails
+select ProductName, price 
+from dbo.ProductDetails
 where Price not in(22.7, 27.75, 6.90);
 
 ---BETWEEN---
-select ProductName, Price from dbo.ProductDetails
+select ProductName, Price 
+from dbo.ProductDetails
 where Price between 17.44 and 33.54;
 
 ---LIKE---
@@ -96,19 +107,25 @@ having max(Price) > 22.79;
 
 ---Section 8 - set operators
 ---UNION---
-select Brand from dbo.ProductDetails
+select Brand 
+from dbo.ProductDetails
 union
-select MobileBrand from dbo.Mobile
+select MobileBrand 
+from dbo.Mobile
 
 ---INTERSECT---
-select Brand from dbo.ProductDetails
+select Brand 
+from dbo.ProductDetails
 intersect
-select MobileBrand from dbo.Mobile
+select MobileBrand 
+from dbo.Mobile
 
 ---EXCEPT---
-select Brand from dbo.ProductDetails
+select Brand 
+from dbo.ProductDetails
 except
-select MobileBrand from dbo.Mobile
+select MobileBrand 
+from dbo.Mobile
 
 
 
