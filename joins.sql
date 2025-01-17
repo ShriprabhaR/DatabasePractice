@@ -54,17 +54,14 @@ values
 	select * from school.StudentCourse;
 
 	---Inner Join---
-select
-	Name, CourseId, CourseName
-from
-	school.Student s Inner join school.StudentCourse c
-on
-    s.RollNo = c.RollNo;
+select Name, CourseId, CourseName
+from school.Student s Inner join school.StudentCourse c
+on s.RollNo = c.RollNo;
 
-	---using 3 tables---
-	select Name, c.CourseName, DeptName
-	from school.Student s Inner join school.StudentCourse c on s.RollNo = c.RollNo 
-	                      Inner join school.Department d on c.courseName = d.CourseName;
+---using 3 tables---
+select Name, c.CourseName, DeptName
+from school.Student s Inner join school.StudentCourse c on s.RollNo = c.RollNo 
+	              Inner join school.Department d on c.courseName = d.CourseName;
 
 ---left join---
 select Name, CourseName
