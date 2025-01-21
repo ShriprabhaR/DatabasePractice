@@ -1,5 +1,6 @@
 create database review
 use review
+
 select * from dbo.Customers
 select * from dbo.Employees
 select * from dbo.OrderDetails

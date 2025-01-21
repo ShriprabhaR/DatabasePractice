@@ -130,6 +130,45 @@ from dbo.Mobile
 
 
 
+---Retrieve all rows from a table where a specific column has a value greater than a given threshold. Example: Select records where ColumnA > 100.
+---1---
+select * from dbo.ProductDetails where Price > 27.75;
+
+---Fetch all rows from a table and order them by a specific column in ascending or descending order
+---2---
+select * from dbo.ProductDetails 
+order by Brand DESC;
+
+select * from dbo.ProductDetails 
+order by Brand;
+
+---Retrieve the top 5 rows from a table based on a column's value.
+---3---
+select TOP 5 ProductName, Price 
+from dbo.ProductDetails
+where Price > 22.7;
+
+---Fetch 10 rows starting from the 5th row in a table.
+---4---
+select * from dbo.ProductDetails
+order by ProductName
+offset 5 rows
+fetch next 10 rows only;
+
+---Retrieve rows where values in ColumnD are between 50 and 100, and ColumnE contains the word "Active".
+---5---
+select * from dbo.ProductDetails
+where Price between 20.48 and 30.68 and Brand = 'Nokia';
+
+---Fetch rows where a column matches any value from a specified list.
+---6---
+select * from dbo.ProductDetails
+where Productname like 'Samsung%';
+
+select ProductName from dbo.ProductDetails
+where Productname like '_t%';
+
+
 
 
 
