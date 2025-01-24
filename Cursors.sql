@@ -1,5 +1,5 @@
 
-
+-----------Cursor----------
 declare @ProductName varchar(50), @price money
 
 declare CursorDemo CURSOR
@@ -17,6 +17,7 @@ close CursorDemo;
 deallocate CursorDemo;
 
 
+------------2------------
 
 declare @ProductName varchar(50), @Price money
 declare cursorProduct CURSOR
@@ -36,6 +37,9 @@ while @@FETCH_STATUS=0
  close cursorProduct;
  deallocate cursorProduct;
 
+
+
+ -----------3-----------
  create table Students  
     (  
       Id INT ,  
