@@ -53,7 +53,31 @@ as
  delete from tblEmp
  where Id=5;
 
+ 
+---------------------create triggers on ddl
+create table tblEmpLogs(
+log_id int Identity Primary key,
+event_data xml,
+changed_by sysname );
 
+select * from tblEmpLogs
+
+
+alter trigger trgEmp
+on database
+for
+create_table, alter_table, drop_table
+as
+  begin
+  set nocount on;
+  insert into tblEmpLogs(event_data, changed_by)
+  values(EVENTDATA(), USER);
+  end;
+
+  alter table Account
+  add Balance int;
+
+  select * from Account
 
 
 
